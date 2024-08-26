@@ -2,7 +2,7 @@ package futbol;
 
 
 
-public class Jugador extends Futbolista{
+public class Jugador extends Futbolista implements Comparable<Jugador>{
     
     public short golesMarcados;
     public byte dorsal;
@@ -27,6 +27,10 @@ public class Jugador extends Futbolista{
     public String toString() {
         return "El futbolista " + getNombre() + " tiene " + getEdad() + " años, y juega de " + getPosicion() + 
                " con el dorsal " + dorsal + ". Le han marcado " + golesMarcados + " goles.";
+    }
+    
+    public boolean JugarConLasManos (Futbolista futbolista){
+        return false;
     }
     
     
