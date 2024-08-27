@@ -1,5 +1,7 @@
 package futbol;
 
+import java.util.Objects;
+
 public abstract class Futbolista implements Comparable<Futbolista> {
     // Atributos
     private String nombre;
@@ -39,7 +41,11 @@ public abstract class Futbolista implements Comparable<Futbolista> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, edad, posicion);
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.nombre);
+        hash = 79 * hash + this.edad;
+        hash = 79 * hash + Objects.hashCode(this.posicion);
+        return hash;
     }
 
     @Override
